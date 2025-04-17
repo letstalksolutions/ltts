@@ -1,0 +1,23 @@
+/* Custom fixes for Let's Talk Tax Solutions website */
+
+/* Make subtitle text white-ish (#F7F7F7) */
+.ltts-header .subtitle {
+    color: #F7F7F7 !important;
+}
+
+/* Make calculator header text white-ish (#F7F7F7) */
+.ltts-calculator-header p {
+    color: #F7F7F7 !important;
+}
+
+/* Make "Optimise your tax strategy" text white-ish (#F7F7F7) */
+.ltts-calculator-container h2 + p {
+    color: #F7F7F7 !important;
+}
+
+/* Make all subtitle text in dark sections white-ish (#F7F7F7) */
+.ltts-primary p, 
+.ltts-secondary p,
+.ltts-dark p {
+    color: #F7F7F7 !important;
+}

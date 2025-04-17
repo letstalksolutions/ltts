@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Talk Tax Solutions - Consultant Earnings Calculator</title>
+    <!-- Use relative paths that work with GitHub Pages -->
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/calculator.css">
+    <link rel="stylesheet" href="./css/fixes.css">
+    <link rel="stylesheet" href="./css/ltts-branding.css">
+    <link rel="stylesheet" href="./css/tooltip.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="stylesheet" href="./css/custom-fixes.css">
+    <!-- Add favicon -->
+    <link rel="icon" type="image/png" href="./images/ltts-footer-logo.png">
+</head>
+<body>
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header with Let's Talk Tax Solutions branding -->
+    <header class="ltts-header">
+        <div class="container">
+            <img src="./images/ltts-header-logo.png" alt="Let's Talk Tax Solutions Logo" class="ltts-logo">
+            <p class="subtitle">Consultant Earnings Calculator</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="ltts-nav">
+        <div class="ltts-nav-container">
+            <ul class="ltts-nav-list">
+                <li class="ltts-nav-item"><a href="./index.html" class="ltts-nav-link">Home</a></li>
+                <li class="ltts-nav-item"><a href="./calculator.html" class="ltts-nav-link">Tax Calculator</a></li>
+                <li class="ltts-nav-item"><a href="./consultant.html" class="ltts-nav-link active">Consultant Calculator</a></li>
+                <li class="ltts-nav-item"><a href="./examples/index.html" class="ltts-nav-link">Examples</a></li>
+                <li class="ltts-nav-item"><a href="./faq/index.html" class="ltts-nav-link">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <main id="main-content" class="container">
+        <div class="ltts-calculator-container">
+            <div class="ltts-calculator-header">
+                <h2>Consultant Earnings Calculator</h2>
+                <p>See what you could earn as a consultant</p>
+            </div>
+            
+            <div class="ltts-calculator-disclaimer">
+                <h4>Not Financial Advice</h4>
+                <p>This calculator provides estimates based on current tax regulations and is for informational purposes only. The results should not be considered as financial advice. Always consult with a qualified accountant or tax adviser before making financial decisions.</p>
+            </div>
+
+            <div class="ltts-calculator-body">
+                <!-- Calculator tabs -->
+                <div class="calculator-tabs">
+                    <button class="tab-button active" data-tab="consultant-info">Consultant Info</button>
+                    <button class="tab-button" data-tab="engagement-details">Engagement Details</button>
+                    <button class="tab-button" data-tab="expenses">Expenses</button>
+                    <button class="tab-button" data-tab="results">Results</button>
+                </div>
+
+                <!-- Tab content -->
+                <div class="tab-content">
+                    <!-- Consultant Info Tab -->
+                    <div class="tab-pane active" id="consultant-info">
+                        <h3>Consultant Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="consultant-name">Name</label>
+                                <input type="text" id="consultant-name" class="form-control" placeholder="Your Name">
+                                <div class="form-help">Enter your name or business name</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="business-structure">Business Structure</label>
+                                <select id="business-structure" class="form-control">
+                                    <option value="limited-company">Limited Company</option>
+                                    <option value="sole-trader">Sole Trader</option>
+                                    <option value="umbrella">Umbrella Company</option>
+                                </select>
+                                <div class="form-help">Your current or planned business structure</div>
+                            </div>
+                        </div>
+                        
+                        <h3>Skills & Experience</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="consultant-skills">Primary Skills</label>
+                                <input type="text" id="consultant-skills" class="form-control" placeholder="e.g., Software Development, Project Management">
+                                <div class="form-help">Your main professional skills</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="experience-level">Experience Level</label>
+                                <select id="experience-level" class="form-control">
+                                    <option value="junior">Junior (0-2 years)</option>
+                                    <option value="mid">Mid-level (3-5 years)</option>
+                                    <option value="senior" selected>Senior (6-10 years)</option>
+                                    <option value="expert">Expert (10+ years)</option>
+                                </select>
+                                <div class="form-help">Your level of professional experience</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button class="ltts-button ltts-button-primary next-tab" data-next="engagement-details">Next: Engagement Details</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Engagement Details Tab -->
+                    <div class="tab-pane" id="engagement-details">
+                        <h3>Engagement Details</h3>
+                        <p>Enter details about your potential consulting engagement.</p>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="day-rate">Day Rate</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">£</span>
+                                    <input type="number" id="day-rate" class="form-control" placeholder="550" min="0" value="550">
+                                </div>
+                                <div class="form-help">Your daily rate as a consultant</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="agency-margin">Agency Margin</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">£</span>
+                                    <input type="number" id="agency-margin" class="form-control" placeholder="100" min="0" value="100">
+                                </div>
+                                <div class="form-help">Agency fee per day (typically £50-£150)</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="days-per-week">Days Per Week</label>
+                                <input type="number" id="days-per-week" class="form-control" placeholder="5" min="1" max="7" value="5">
+                                <div class="form-help">Number of working days per week</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="weeks-per-year">Weeks Per Year</label>
+                                <input type="number" id="weeks-per-year" class="form-control" placeholder="46" min="1" max="52" value="46">
+                                <div class="form-help">Working weeks per year (typically 44-48 after holidays)</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="pension-contribution">Pension Contribution</label>
+                                <div class="input-group">
+                                    <input type="number" id="pension-contribution" class="form-control" placeholder="10" min="0" max="100" value="10">
+                                    <span class="input-group-text">%</span>
+                                </div>
+                                <div class="form-help">Percentage of income to contribute to pension</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="vat-registered">VAT Registered</label>
+                                <select id="vat-registered" class="form-control">
+                                    <option value="yes">Yes</option>
+                                    <option value="no" selected>No</option>
+                                    <option value="flat-rate">Yes (Flat Rate Scheme)</option>
+                                </select>
+                                <div class="form-help">VAT registration status</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button class="ltts-button ltts-button-secondary prev-tab" data-prev="consultant-info">Previous: Consultant Info</button>
+                            <button class="ltts-button ltts-button-primary next-tab" data-next="expenses">Next: Expenses</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Expenses Tab -->
+                    <div class="tab-pane" id="expenses">
+                        <h3>Business Expenses</h3>
+                        <p>Add estimated annual business expenses to calculate net income.</p>
+                        
+                        <div class="expenses-grid">
+                            <div class="form-group">
+                                <label for="expense-equipment">Equipment & Software</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">£</span>
+                                    <input type="number" id="expense-equipment" class="form-control expense-item" data-expense-type="equipment" placeholder="2000" min="0" value="2000">
+                                </div>
+                                <div class="form-help">Computer, software, tools, etc.</div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="expense-travel">Travel & Subsistence</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">£</span>
+                                    <input type="number" id="expense-travel" class="form-control expense-item" data-expense-type="travel" placeholder="3000" min="0" value="3000">
+                                </div>
+                                <div class="form-help">Travel to client sites, accommodation, meals</div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="expense-office">Office Costs</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">£</span>
+                                    <input type="number" id="expense-office" class="form-control expense-item" data-expense-type="office" placeholder="1200" min="0" value="1200">
+                                </div>
+                                <div class="form-help">Home office, co-working space, utilities</div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="expense-insurance">Insurance</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">£</span>
+                                    <input type="number" id="expense-insurance" class="form-control expense-item" data-expense-type="insurance" placeholder="500" min="0" value="500">
+                                </div>
+                                <div class="form-help">Professional indemnity, public liability</div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="expense-professional">Professional Services</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">£</span>
+                                    <input type="number" id="expense-professional" class="form-control expense-item" data-expense-type="professional" placeholder="1500" min="0" value="1500">
+                                </div>
+                                <div class="form-help">Accountancy, legal fees</div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="expense-training">Training & Development</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">£</span>
+                                    <input type="number" id="expense-training" class="form-control expense-item" data-expense-type="training" placeholder="1000" min="0" value="1000">
+                                </div>
+                                <div class="form-help">Courses, conferences, books</div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="expense-marketing">Marketing & Networking</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">£</span>
+                                    <input type="number" id="expense-marketing" class="form-control expense-item" data-expense-type="marketing" placeholder="500" min="0" value="500">
+                                </div>
+                                <div class="form-help">Website, business cards, networking events</div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="expense-other">Other Expenses</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">£</span>
+                                    <input type="number" id="expense-other" class="form-control expense-item" data-expense-type="other" placeholder="1000" min="0" value="1000">
+                                </div>
+                                <div class="form-help">Any other allowable business expenses</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button class="ltts-button ltts-button-secondary prev-tab" data-prev="engagement-details">Previous: Engagement Details</button>
+                            <button class="ltts-button ltts-button-primary next-tab" data-next="results">Next: Results</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Results Tab -->
+                    <div class="tab-pane" id="results">
+                        <h3>Consultant Earnings Results</h3>
+                        
+                        <div class="ltts-results-container">
+                            <div class="ltts-results-header">
+                                <h3>Annual Summary</h3>
+                            </div>
+                            
+                            <div class="ltts-results-summary">
+                                <div class="ltts-results-item">
+                                    <div class="ltts-results-label">Client Charge Rate</div>
+                                    <div class="ltts-results-value" id="result-client-rate">£0</div>
+                                </div>
+                                <div class="ltts-results-item">
+                                    <div class="ltts-results-label">Your Day Rate</div>
+                                    <div class="ltts-results-value" id="result-day-rate">£0</div>
+                                </div>
+                                <div class="ltts-results-item">
+                                    <div class="ltts-results-label">Annual Gross Income</div>
+                                    <div class="ltts-results-value" id="result-gross-income">£0</div>
+                                </div>
+                                <div class="ltts-results-item">
+                                    <div class="ltts-results-label">Total Expenses</div>
+                                    <div class="ltts-results-value" id="result-total-expenses">£0</div>
+                                </div>
+                                <div class="ltts-results-item">
+                                    <div class="ltts-results-label">Taxable Profit</div>
+                                    <div class="ltts-results-value" id="result-taxable-profit">£0</div>
+                                </div>
+                                <div class="ltts-results-item">
+                                    <div class="ltts-results-label">Total Tax & NI</div>
+                                    <div class="ltts-results-value" id="result-total-tax">£0</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="ltts-take-home-container">
+                            <div class="ltts-take-home-header">
+                                <h3>Take-Home Pay</h3>
+                            </div>
+                            
+                            <div class="ltts-take-home-cards">
+                                <div class="ltts-take-home-card">
+                                    <div class="ltts-take-home-name">Monthly Take-Home</div>
+                                    <div class="ltts-take-home-amount" id="result-monthly-take-home">£0</div>
+                                    <div class="ltts-take-home-details">After tax, NI, and expenses</div>
+                                    
+                                    <div class="ltts-take-home-breakdown">
+                                        <div class="ltts-take-home-item">
+                                            <div class="ltts-take-home-item-label">Gross Income</div>
+                                            <div class="ltts-take-home-item-value" id="breakdown-gross-monthly">£0</div>
+                                        </div>
+                                        <div class="ltts-take-home-item">
+                                            <div class="ltts-take-home-item-label">Expenses</div>
+                                            <div class="ltts-take-home-item-value" id="breakdown-expenses-monthly">£0</div>
+                                        </div>
+                                        <div class="ltts-take-home-item">
+                                            <div class="ltts-take-home-item-label">Tax & NI</div>
+                                            <div class="ltts-take-home-item-value" id="breakdown-tax-monthly">£0</div>
+                                        </div>
+                                        <div class="ltts-take-home-item">
+                                            <div class="ltts-take-home-item-label">Pension</div>
+                                            <div class="ltts-take-home-item-value" id="breakdown-pension-monthly">£0</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="ltts-take-home-card">
+                                    <div class="ltts-take-home-name">Annual Take-Home</div>
+                                    <div class="ltts-take-home-amount" id="result-annual-take-home">£0</div>
+                                    <div class="ltts-take-home-details">After tax, NI, and expenses</div>
+                                    
+                                    <div class="ltts-take-home-breakdown">
+                                        <div class="ltts-take-home-item">
+                                            <div class="ltts-take-home-item-label">Gross Income</div>
+                                            <div class="ltts-take-home-item-value" id="breakdown-gross-annual">£0</div>
+                                        </div>
+                                        <div class="ltts-take-home-item">
+                                            <div class="ltts-take-home-item-label">Expenses</div>
+                                            <div class="ltts-take-home-item-value" id="breakdown-expenses-annual">£0</div>
+                                        </div>
+                                        <div class="ltts-take-home-item">
+                                            <div class="ltts-take-home-item-label">Tax & NI</div>
+                                            <div class="ltts-take-home-item-value" id="breakdown-tax-annual">£0</div>
+                                        </div>
+                                        <div class="ltts-take-home-item">
+                                            <div class="ltts-take-home-item-label">Pension</div>
+                                            <div class="ltts-take-home-item-value" id="breakdown-pension-annual">£0</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="ltts-results-container">
+                            <div class="ltts-results-header">
+                                <h3>Business Structure Comparison</h3>
+                            </div>
+                            
+                            <div class="business-structure-comparison" id="business-structure-comparison">
+                                <!-- Business structure comparison will be dynamically generated here -->
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button class="ltts-button ltts-button-secondary prev-tab" data-prev="expenses">Previous: Expenses</button>
+                            <button id="recalculate-button" class="ltts-button ltts-button-primary">Recalculate</button>
+                            <button id="save-results-button" class="ltts-button ltts-button-outline">Save Results</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="ltts-footer">
+        <div class="ltts-footer-content">
+            <div class="ltts-footer-section">
+                <img src="./images/ltts-footer-logo.png" alt="Let's Talk Tax Solutions Logo" class="ltts-logo" style="max-width: 100px; margin-bottom: 1rem;">
+                <p>Helping UK limited companies optimise their tax strategy with transparent, easy-to-use tools.</p>
+            </div>
+            <div class="ltts-footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./calculator.html">Tax Calculator</a></li>
+                    <li><a href="./consultant.html">Consultant Calculator</a></li>
+                    <li><a href="./examples/index.html">Examples</a></li>
+                    <li><a href="./faq/index.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="ltts-footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Disclaimer</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="ltts-footer-bottom">
+            <p>&copy; 2025 Let's Talk Tax Solutions. All rights reserved.</p>
+            <p class="disclaimer-text">This calculator provides estimates only and does not constitute financial advice. Always consult with a qualified accountant or tax adviser.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./js/consultant-calculator.js"></script>
+    <script src="./js/interdependent-fields.js"></script>
+    <script src="./js/validation.js"></script>
+    <script src="./js/british-english.js"></script>
+</body>
+</html>
